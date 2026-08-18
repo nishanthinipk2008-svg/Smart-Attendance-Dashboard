@@ -1,0 +1,520 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   BODY
+========================== */
+
+body {
+    background: #eef4ff;
+    color: #172554;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 230px;
+    height: 100vh;
+
+    background: #101b3d;
+
+    color: white;
+
+    padding: 34px 28px;
+
+    border-right: 5px solid #2563eb;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.35;
+
+    margin-bottom: 60px;
+}
+
+/* NAVIGATION */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+
+    color: #dbe7ff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding-left: 8px;
+
+    transition: 0.25s ease;
+}
+
+.sidebar nav a:hover {
+    color: #60a5fa;
+
+    transform: translateX(5px);
+}
+
+.sidebar nav a.active {
+    color: #ffffff;
+}
+
+/* =========================
+   MAIN CONTENT
+========================== */
+
+.main-content {
+    margin-left: 230px;
+
+    padding: 48px 45px;
+
+    min-height: 100vh;
+}
+
+/* HEADING */
+
+.main-content > h1 {
+    font-size: 38px;
+
+    color: #0b1f4d;
+
+    margin-bottom: 36px;
+
+    font-weight: 900;
+}
+
+/* =========================
+   STAT CARDS
+========================== */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    position: relative;
+
+    height: 125px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #dce8ff;
+
+    border: 2px solid #b8cdf5;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+
+    box-shadow:
+        0 6px 18px rgba(15, 35, 80, 0.14);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(15, 35, 80, 0.22);
+}
+
+/* INDIVIDUAL CARD BACKGROUNDS */
+
+.total {
+    background: #d8e6ff;
+}
+
+.present {
+    background: #d7f1f7;
+}
+
+.absent {
+    background: #dce2ff;
+}
+
+.percentage {
+    background: #d2e1ff;
+}
+
+/* CARD TEXT */
+
+.stat-card p {
+    color: #263f70;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.stat-card h2 {
+    font-size: 33px;
+
+    font-weight: 800;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* =========================
+   CARD COLOURS
+========================== */
+
+.total h2 {
+    color: #1746a2;
+}
+
+.present h2 {
+    color: #05677c;
+}
+
+.absent h2 {
+    color: #30449c;
+}
+
+.percentage h2 {
+    color: #123b91;
+}
+
+/* =========================
+   CIRCULAR ACCENTS
+========================== */
+
+.bubble {
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    right: -20px;
+    top: -20px;
+
+    border-radius: 50%;
+
+    opacity: 0.95;
+
+    transition: 0.25s ease;
+}
+
+.stat-card:hover .bubble {
+    transform: scale(1.08);
+}
+
+.total .bubble {
+    background: #9fc0f5;
+
+    border: 8px solid #d8e6ff;
+}
+
+.present .bubble {
+    background: #91d7e3;
+
+    border: 8px solid #d7f1f7;
+}
+
+.absent .bubble {
+    background: #aab7ed;
+
+    border: 8px solid #dce2ff;
+}
+
+.percentage .bubble {
+    background: #94b6ed;
+
+    border: 8px solid #d2e1ff;
+}
+
+/* =========================
+   MARK ATTENDANCE
+========================== */
+
+.mark-section {
+    position: relative;
+
+    background: #101b3d;
+
+    border-radius: 25px;
+
+    padding: 32px 30px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 22px rgba(16, 27, 61, 0.12);
+}
+
+.mark-section h2 {
+    color: white;
+
+    font-size: 25px;
+
+    margin-bottom: 22px;
+}
+
+/* FORM */
+
+.attendance-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.attendance-form input {
+    width: 230px;
+    height: 48px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 13px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+
+    background: #ffffff;
+}
+
+.attendance-form input:focus {
+    box-shadow:
+        0 0 0 3px rgba(96, 165, 250, 0.35);
+}
+
+.attendance-form select {
+    width: 122px;
+    height: 48px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 13px;
+
+    padding: 0 15px;
+
+    color: #172554;
+
+    background: white;
+
+    font-size: 14px;
+}
+
+.attendance-form button {
+    height: 48px;
+
+    padding: 0 23px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.attendance-form button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* BIG CHECK */
+
+.check-mark {
+    position: absolute;
+
+    right: 35px;
+    top: 42px;
+
+    font-size: 100px;
+
+    color: rgba(96, 165, 250, 0.10);
+
+    font-weight: bold;
+
+    transform: rotate(-8deg);
+}
+
+/* =========================
+   RECORDS
+========================== */
+
+.records {
+    background: white;
+
+    border: 2px solid #dbe7ff;
+
+    border-radius: 25px;
+
+    padding: 35px 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 18px rgba(30, 64, 175, 0.06);
+}
+
+.records h2 {
+    color: #172554;
+
+    font-size: 24px;
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   TABLE
+========================== */
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+thead {
+    background: #c9dcfa;
+}
+
+th {
+    text-align: left;
+
+    padding: 16px;
+
+    color: #294477;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+td {
+    padding: 16px;
+
+    font-size: 14px;
+
+    color: #405276;
+
+    border-bottom: 1px solid #d5e1f4;
+}
+
+tbody tr:hover {
+    background: #eaf2ff;
+}
+
+/* =========================
+   STATUS
+========================== */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.present-status {
+    background: #bfe8ef;
+
+    color: #075c70;
+}
+
+.absent-status {
+    background: #cbd4f5;
+
+    color: #35488f;
+}
+
+/* =========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1000px) {
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .main-content {
+        margin-left: 180px;
+
+        padding: 30px 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+```
+

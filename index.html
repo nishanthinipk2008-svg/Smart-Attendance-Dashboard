@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Attendance Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Smart<br>
+            Attendance
+        </div>
+
+        <nav>
+            <a class="active" href="#">Dashboard</a>
+            <a href="#">Students</a>
+            <a href="#">Attendance</a>
+            <a href="#">Reports</a>
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <h1>Attendance Dashboard</h1>
+
+
+        <!-- =========================
+             STAT CARDS
+        ========================== -->
+
+        <section class="stats">
+
+            <!-- Total Students -->
+
+            <div class="stat-card total">
+
+                <div class="bubble"></div>
+
+                <p>Total Students</p>
+
+                <h2 id="totalStudents">50</h2>
+
+            </div>
+
+
+            <!-- Present -->
+
+            <div class="stat-card present">
+
+                <div class="bubble"></div>
+
+                <p>Present</p>
+
+                <h2 id="present">42</h2>
+
+            </div>
+
+
+            <!-- Absent -->
+
+            <div class="stat-card absent">
+
+                <div class="bubble"></div>
+
+                <p>Absent</p>
+
+                <h2 id="absent">8</h2>
+
+            </div>
+
+
+            <!-- Attendance Percentage -->
+
+            <div class="stat-card percentage">
+
+                <div class="bubble"></div>
+
+                <p>Attendance %</p>
+
+                <h2 id="percentage">84%</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MARK ATTENDANCE
+        ========================== -->
+
+        <section class="mark-section">
+
+            <h2>Mark Attendance</h2>
+
+            <div class="attendance-form">
+
+                <!-- Student Name -->
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student name"
+                >
+
+
+                <!-- Status -->
+
+                <select id="status">
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                </select>
+
+
+                <!-- Button -->
+
+                <button onclick="markAttendance()">
+                    Mark Attendance
+                </button>
+
+            </div>
+
+
+            <!-- Background Check Mark -->
+
+            <div class="check-mark">
+                ✓
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ATTENDANCE RECORDS
+        ========================== -->
+
+        <section class="records">
+
+            <h2>Attendance Records</h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Student Name
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <!--
+                    IMPORTANT:
+                    No sample names here.
+                    JavaScript will add records.
+                -->
+
+                <tbody id="attendanceTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
