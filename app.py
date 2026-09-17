@@ -9,8 +9,8 @@ app = Flask(__name__)
 # FOLDERS
 # -----------------------------
 
-FRONTEND_FOLDER = "../frontend"
-DATABASE_FILE = "../database/attendance.db"
+FRONTEND_FOLDER = "."
+DATABASE_FILE = "attendance.db"
 
 
 # -----------------------------
@@ -155,8 +155,10 @@ def get_stats():
 
     percentage = 0
 
-    if total > 0:
-        percentage = round((present / (present + absent)) * 100)
+    if present + absent > 0:
+        percentage = round(
+            (present / (present + absent)) * 100
+        )
 
     conn.close()
 
@@ -169,9 +171,15 @@ def get_stats():
 
 
 # -----------------------------
+# INITIALIZE DATABASE
+# -----------------------------
+
+init_db()
+
+
+# -----------------------------
 # START APPLICATION
 # -----------------------------
 
 if __name__ == "__main__":
-    init_db()
     app.run(debug=True)
